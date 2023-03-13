@@ -114,15 +114,16 @@ const cards = [
 ];
 const domContainer = document.getElementById('container');
 
-cards.forEach((Element, index) => {
-    const boxx = newBox(Element);
-    domContainer.innerHTML = boxx;
+cards.forEach((Element) => {
+    const domBox = newBox(Element);
+    domContainer.innerHTML += domBox;
 });
 
 
 
+
 function newBox(Element) {
-    const domBox = `<div class="box"> 
+    const box = `<div class="box"> 
                         <div class="icon"> 
                             <i class="${Element.prefix}solid ${Element.prefix}${Element.name}"></i>
                         </div>
@@ -131,5 +132,5 @@ function newBox(Element) {
                         </div>
                     </div>`
 
-    return domBox;
+    return box;
 }

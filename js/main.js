@@ -115,22 +115,30 @@ const cards = [
 const domContainer = document.getElementById('container');
 const domSelettore = document.getElementById('selettore');
 cards.forEach((Element) => {
-	if(Element.color == 'orange'){
-		Element.color = '#ffa500';
-	}else if(Element.color == 'green'){
-		Element.color = '#326554';
-	}else{
-		Element.color = '#1e396f';
-	}
+
+//Divisione dei colori Milestone 2
+//	if(Element.color == 'orange'){
+//		Element.color = '#ffa500';
+//	}else if(Element.color == 'green'){
+//		Element.color = '#326554';
+//	}else{
+//		Element.color = '#1e396f';
+//	}
+
+//Bonus
+Element.color = coloreCasuale();
+//Bonus
+
 	const domBox = newBox(Element);
 	domContainer.innerHTML += domBox;
 });
 console.log(cards);
+
 domSelettore.addEventListener('change', function () {
 	domContainer.innerHTML = '';
 	const scelta = domSelettore.value;
 
-	if(scelta == 'animal'){
+	if(scelta == 'animal'){              //come posso ottimizzare questa condizione ??
 		animal.forEach((Element) => {
 			const domBox = newBox(Element);
 	        domContainer.innerHTML += domBox;
@@ -182,4 +190,18 @@ function newBox(Element) {
     return box;
 }
 
-	
+//BONUS
+function coloreCasuale(){
+	const n=6;
+	let T=['#'];
+	let caratteri = "ABCDEF0123456789"
+	for(let i = 0; i<n;i++){
+		T.push(caratteri.charAt(Math.floor(Math.random() * caratteri.length)));
+	}
+let estratto = T;
+let stringa = '';
+for(let i = 0; i < estratto.length ; i++){
+	stringa += estratto[i];
+}
+return stringa;
+}

@@ -125,9 +125,9 @@ cards.forEach((Element) => {
 //		Element.color = '#1e396f';
 //	}
 
-//Bonus
+//Bonus1
 Element.color = coloreCasuale();
-//Bonus
+//Bonus1
 
 	const domBox = newBox(Element);
 	domContainer.innerHTML += domBox;
@@ -190,7 +190,7 @@ function newBox(Element) {
     return box;
 }
 
-//BONUS
+//BONUS 1
 function coloreCasuale(){
 	const n=6;
 	let T=['#'];

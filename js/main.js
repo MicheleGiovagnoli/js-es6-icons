@@ -125,12 +125,11 @@ cards.forEach((Element) => {
 function newBox(Element) {
     const box = `<div class="box"> 
                         <div class="icon"> 
-                            <i class="${Element.prefix}solid ${Element.prefix}${Element.name}"></i>
+                            <i class="${Element.prefix}solid ${Element.prefix}${Element.name} ${Element.color}"></i>
                         </div>
                         <div class="title">
                             <span>${Element.name}</span>
                         </div>
                     </div>`
-
     return box;
 }

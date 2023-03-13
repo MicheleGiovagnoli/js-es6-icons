@@ -115,7 +115,6 @@ const cards = [
 const domContainer = document.getElementById('container');
 const domSelettore = document.getElementById('selettore');
 cards.forEach((Element) => {
-
 	if(Element.color == 'orange'){
 		Element.color = '#ffa500';
 	}else if(Element.color == 'green'){
@@ -123,24 +122,53 @@ cards.forEach((Element) => {
 	}else{
 		Element.color = '#1e396f';
 	}
-
-    const domBox = newBox(Element);
-    domContainer.innerHTML += domBox;
+	const domBox = newBox(Element);
+	domContainer.innerHTML += domBox;
 });
 console.log(cards);
-
-
 domSelettore.addEventListener('change', function () {
+	domContainer.innerHTML = '';
+	const scelta = domSelettore.value;
+
+	if(scelta == 'animal'){
+		animal.forEach((Element) => {
+			const domBox = newBox(Element);
+	        domContainer.innerHTML += domBox;
+		});
+	}else if (scelta == 'vegetable') {
+		vegetable.forEach((Element) => {
+			const domBox = newBox(Element);
+	        domContainer.innerHTML += domBox;
+		});
+	}else {
+		user.forEach((Element) => {
+			const domBox = newBox(Element);
+	        domContainer.innerHTML += domBox;
+		});
+	}	
 });
 
-
-
-
-
-
-
-
-
+const animal = cards.filter(Element => {
+	if(Element.type == 'animal'){
+		return true;
+	}else {
+		return false;
+	}
+});
+const vegetable = cards.filter(Element => {
+	if(Element.type == 'vegetable'){
+		return true;
+	}else {
+		return false;
+	}
+});
+const user = cards.filter(Element => {
+	if(Element.type == 'user'){
+		return true;
+	}else {
+		return false;
+	}
+});
 
 function newBox(Element) {
     const box = `<div class="box"> 

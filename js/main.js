@@ -113,11 +113,31 @@ const cards = [
 	}
 ];
 const domContainer = document.getElementById('container');
-
+const domSelettore = document.getElementById('selettore');
 cards.forEach((Element) => {
+
+	if(Element.color == 'orange'){
+		Element.color = '#ffa500';
+	}else if(Element.color == 'green'){
+		Element.color = '#326554';
+	}else{
+		Element.color = '#1e396f';
+	}
+
     const domBox = newBox(Element);
     domContainer.innerHTML += domBox;
 });
+console.log(cards);
+
+
+domSelettore.addEventListener('change', function () {
+});
+
+
+
+
+
+
 
 
 
@@ -125,11 +145,13 @@ cards.forEach((Element) => {
 function newBox(Element) {
     const box = `<div class="box"> 
                         <div class="icon"> 
-                            <i class="${Element.prefix}solid ${Element.prefix}${Element.name} ${Element.color}"></i>
+                            <i class="${Element.prefix}solid ${Element.prefix}${Element.name}" style="color:${Element.color}"></i>
                         </div>
                         <div class="title">
                             <span>${Element.name}</span>
                         </div>
-                    </div>`
+                    </div>`;
     return box;
 }
+
+	

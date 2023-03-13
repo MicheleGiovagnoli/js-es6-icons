@@ -140,12 +140,12 @@ domSelettore.addEventListener('change', function () {
 			const domBox = newBox(Element);
 	        domContainer.innerHTML += domBox;
 		});
-	}else {
+	}else if (scelta== 'user'){
 		user.forEach((Element) => {
 			const domBox = newBox(Element);
 	        domContainer.innerHTML += domBox;
 		});
-	}	
+	}
 });
 
 const animal = cards.filter(Element => {
